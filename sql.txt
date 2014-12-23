@@ -1,0 +1,22 @@
+CREATE TABLE `schedulerOverdueLog` (
+  `scheduler_overdue_log_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `start_date` timestamp NULL DEFAULT NULL,
+  `end_date` timestamp NULL DEFAULT NULL,
+  `tickets_to_update` bigint(20) DEFAULT NULL,
+  `tickets_updated` bigint(20) DEFAULT NULL,
+  `process_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`scheduler_overdue_log_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `debugScheduler` (
+  `scheduler_overdue_log_id` bigint(20) DEFAULT NULL,
+  `Ticket_ID` bigint(11) DEFAULT NULL,
+  `ticket_creation` longtext CHARACTER SET utf8,
+  `date_current` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `Ticket_dayOfWeek` bigint(20) DEFAULT NULL,
+  `TicketDateCreation_plus_days` longtext CHARACTER SET utf8,
+  `hourDifferences` bigint(20) DEFAULT NULL,
+  `severity` longtext CHARACTER SET utf8,
+  `TicketType_ID` bigint(20) unsigned DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
